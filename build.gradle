@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testImplementation ('org.junit.jupiter:junit-jupiter:5.8.1',
+                        'com.codeborne:selenide:5.25.0',
+                        'org.aspectj:aspectjweaver:1.9.7')
+    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.8.1',
+            'org.slf4j:slf4j-simple:1.7.32')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
