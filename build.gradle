@@ -21,12 +21,12 @@ allure {
 }
 
 dependencies {
-    testImplementation ('org.junit.jupiter:junit-jupiter:5.8.1',
-                        'com.codeborne:selenide:5.25.0',
-                        'org.aspectj:aspectjweaver:1.9.7',
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.1',
+            'com.codeborne:selenide:5.25.0',
+            'org.aspectj:aspectjweaver:1.9.7',
             'io.qameta.allure:allure-selenide:2.15.0',
-                'org.aeonbits.owner:owner:1.0.12')
-    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.8.1',
+            'org.aeonbits.owner:owner:1.0.12')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1',
             'org.slf4j:slf4j-simple:1.7.32')
 }
 
@@ -47,5 +47,3 @@ tasks.withType(Test) {
         }
     }
 }
-/* java -DprojectName=PROJECT_NAME -Denv=ENVIRONMENT -DreportLink=BUILD_URL -Dcomm="Any comment here" -Dconfig.file=src/test/resources/notifications/telegram.json -jar allure-notifications-3.1.2.jar
-*/
