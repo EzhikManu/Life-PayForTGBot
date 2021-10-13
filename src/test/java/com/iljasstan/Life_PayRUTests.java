@@ -45,7 +45,7 @@ public class Life_PayRUTests {
         else return;
     }
     @Test
-    @DisplayName("Check the registration page with invalids tel and email")
+    @DisplayName("Check the registration page with invalid tel and email")
     void registrationTest() {
         step("Open students account page", () -> {
                     open("https://my.life-pay.ru/?_ga=2.70394262.708319020.1634027069-1543519573.1634027069");
