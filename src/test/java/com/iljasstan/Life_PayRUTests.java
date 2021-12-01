@@ -15,7 +15,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.logging.Level;
 
 import static com.codeborne.selenide.Selectors.byPartialLinkText;
 import static com.codeborne.selenide.Selenide.$;
@@ -32,13 +36,18 @@ public class Life_PayRUTests {
     void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
+        LoggingPreferences logPrefs = new LoggingPreferences();
+        logPrefs.enable(LogType.BROWSER, Level.ALL);
+        logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("goog:loggingPrefs", logPrefs);
 
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
-        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", login, password);
+        Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", "user1", "1234");
     }
 
     void accessCookies() {
