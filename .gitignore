@@ -8,3 +8,4 @@ build
 *.properties
 *.jar
 allure-report
+.allure
