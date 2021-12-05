@@ -107,7 +107,6 @@ public class Life_PayRUTests {
             $("#item1").shouldHave(Condition.text(cashRegistr.getDesc()));
         });
     }
-
     @AfterEach
     void tearDown() {
         Attach.screenshotAs("Last screenshot");
